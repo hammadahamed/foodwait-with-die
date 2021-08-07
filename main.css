@@ -1,0 +1,303 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* width: 90vw; */
+    overflow-x: hidden;
+    background-color: #2f3542;
+
+}
+
+.flex-col-centering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row-centering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#die {
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    /* animation: spin .1s linear infinite; */
+}
+
+#hold-btn {
+    border-radius: 4px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    position: absolute;
+    top: 65%;
+    left: 46%;
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: transparent;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, .5);
+    border-style: solid;
+}
+
+#turn-break {
+    border-radius: 10px;
+    position: absolute;
+    top: 15%;
+    left: 46.6%;
+    color: red;
+    font-size: 13px;
+    opacity: .7;
+    font-weight: 500;
+    padding: 2px 10px;
+    background: rgba(255, 255, 255, .13);
+}
+
+#turn-break-number {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+#hold-btn:hover {
+    background-color: rgba(255, 255, 255, .2);
+    /* color: red; */
+}
+
+#spin-btn {
+    color: #c23616;
+    height: 80px;
+    width: 80px;
+    background: transparent;
+    border-radius: 40px;
+    padding: 3px;
+    padding-top: 5px;
+    border: none;
+    z-index: 10;
+    /* transform: ; */
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#spin-btn:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+#spin-btn>p {
+    color: red;
+    opacity: 1;
+    z-index: 10;
+}
+
+.spinner {
+    animation: spin .1s linear infinite;
+}
+
+.slow-spinner {
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.app-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #2f3542;
+}
+
+.game-container {
+    color: white;
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("assets/jungle.jpg");
+}
+
+.game-left {
+    height: 100%;
+    width: 50%;
+    background: rgba(255, 255, 255, .2);
+}
+
+.game-right {
+    height: 100%;
+    width: 50%;
+    background: rgba(255, 255, 255, .13);
+}
+
+.player-details {
+    row-gap: 50px;
+    height: 100%;
+}
+
+.current-score {
+    font-size: 200px;
+    margin-top: -100px;
+    margin-bottom: 50px;
+}
+
+.total-score-container {
+    color: rgba(0, 0, 0, .6);
+    font-size: 50px;
+    height: 70px;
+    width: 140px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.winner-bg {
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 50;
+}
+
+.confetti {
+    background-image: url("assets/confetti-bg.png");
+    height: 100%;
+    width: 100%;
+}
+
+
+.text-g {
+    background: linear-gradient(to right, #12CBC4 0%, #1289A7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(2);
+    animation: pulse 2s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 255 255 255 2px rgba(255, 255, 255, 255, .7);
+    }
+
+    70% {
+        transform: scale(1.4);
+        box-shadow: 255 255 255 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 255 255 255 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.how-to-play {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.how-to-play>p {
+    padding: 2px 15px;
+    background-color: rgba(255, 255, 255, .13);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.how-to-play>p:hover {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.how-to-play>div {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    margin-right: 20px;
+    padding: 2px 15px;
+    background-color: rgba(255, 255, 255, .13);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#instructions {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 50;
+}
+
+#instructions>div {
+    color: black;
+    height: max-content;
+    max-height: 70%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: max-content;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px 40px;
+    padding-bottom: 40px;
+}
+
+
+
+/* ------------------------------------------------------------------------------------- */
+/* ---------------------------- FOR PLACEHOLDERS ---------------------------- */
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    @apply text-gray-400 text-sm !important;
+    /* Firefox */
+}
+
+.selectOption:hover {
+    background-color: #abadb1 !important;
+}
+
+/* ---------------------------- CUSTOM SCROLL-BAR --------------------------- */
+
+*::-webkit-scrollbar {
+    /* @apply w-1.5 h-1; */
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    /* @apply rounded-full bg-gray-100; */
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    /* @apply w-1.5 h-1 bg-gray-400 bg-opacity-60 rounded-full; */
+    width: 2px;
+    border-radius: 2px;
+    background-color: #dfe4ea;
+
+}
+
+*::-webkit-scrollbar-track-piece {
+    @apply bg-transparent;
+}
+
+html {
+    scrollbar-color: #abadb1;
+    scrollbar-width: 6px;
+}

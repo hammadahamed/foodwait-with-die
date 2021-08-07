@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script src="/main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                               APP SECTION                               -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="app-container">
+        <button><a href="#game-section">Play game</a></button>
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                              GAME SECTION                               -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div id="game-section" class="game-container">
+        <!-- ----------------------------- HOW TO PLAY ----------------------------- -->
+        <div class="how-to-play ">
+            <p id="how-to-play">How to Play ?</p>
+            <div>Target Score : <span id="target-score" contenteditable="true" style="font-size: 30px;">50</span></div>
+        </div>
+
+        <!-- ---------------------------- INSTRUCTIONS ----------------------------- -->
+        <div id="instructions" class="flex-col-centering hidden">
+            <div>
+                <p style="color: red; font-size: 25px;">How to play ?</p>
+                <p>- This is a simple die game</p>
+                <p>- It has two player</p>
+                <p>- Click on the player name to change that</p>
+                <p>- Player 1's (Left side) turn starts first</p>
+                <p>- Click on the roll icon to start rolling the Die</p>
+                <p>- If either <span style="color: red;">'6'</span> or the previously rolled number turns up, then your
+                    turn will break</p>
+                <p>- Before the above mentioned condition comes, you can save the scores that you <br> have rolled by
+                    clicking
+                    <span style="color: red;">'GRAB SCORE'</span> button
+                </p>
+                <p>- Click 'GRAB SCORE' button will save your rolled scores to the total score section, <br> and breaks
+                    your turn</p>
+                <p>- The who reaches 50 points first is the winner</p>
+                <p>- You can also change the <span style="color: red;">'TARGET SCORE'</span> by clicking on the same</p>
+            </div>
+
+        </div>
+
+        <!-- ------------------------------ CONFETTI ------------------------------- -->
+        <div id="confetti" class="winner-bg hidden">
+            <div class="confetti flex-col-centering ">
+                <h1 id="winner" style="font-size: 100px; " class="text-g">Player</h1>
+                <h1 style="font-weight: 300;">WINS !</h1>
+            </div>
+
+        </div>
+
+        <!-- --------------------------------- DIE --------------------------------- -->
+        <img id="die" class="slow-spinner" src="/assets/die6.png" alt="" height="150px" width="150px">
+        <button id="hold-btn" class="">
+            GRAB SCORE
+        </button>
+
+        <!-- ----------------------------- TURN BREAK ------------------------------ -->
+        <div id="turn-break" class="flex-col-centering">
+            <div id="" style="font-weight: 500;">
+                TURN BREAK
+            </div>
+            <span id="turn-break-number">0</span>
+        </div>
+
+        <div class="game-left">
+            <div class="player-details flex-col-centering">
+                <!-- NAME -->
+                <div class="flex-row-centering">
+                    <p style="font-size: 10px; opacity: .5;">CLICK ON IT TO EDIT PLAYER NAME</p>
+                    <p id="player1" style="font-size: 50px;margin-top: -10px;" contenteditable="true">PLAYER 1</p>
+                </div>
+                <!-- TOTAL SCORE -->
+                <div id="current-score1" class="current-score">
+                    0
+                </div>
+                <!-- ------------------------------- SPINNER -------------------------------- -->
+                <div id="spinner-wrap1" style="margin-top: -100px;margin-bottom: 50px; height: 35px;">
+                    <button style="cursor: pointer;" id="spin-btn" class="spin-btn">
+                        <img src="/assets/rotate-cw.svg" height="35px" alt="roll">
+                    </button>
+                </div>
+                <!-- TOTAL ROLL SCORE -->
+                <div class="total-score-container flex-col-centering">
+                    <div id="total-score1">
+                        0
+                    </div>
+                    <h1 style="font-size: 10px; margin-top: -5px; color:red ;">TOTAL SCORE</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-right">
+            <div class="player-details flex-col-centering">
+                <!-- NAME -->
+                <div class="flex-row-centering">
+                    <p style="font-size: 10px; opacity: .5;">CLICK ON IT TO PLAYER NAME</p>
+                    <p id="player2" style="font-size: 50px;margin-top: -10px;" contenteditable="true">PLAYER 2</p>
+                </div>
+                <!-- TOTAL SCORE -->
+                <div id="current-score2" class="current-score">
+                    0
+                </div>
+                <!-- ------------------------------- SPINNER -------------------------------- -->
+                <div id="spinner-wrap2" style="margin-top: -100px;margin-bottom: 50px; height: 35px;">
+
+                </div>
+                <!-- CURRENT ROLL SCORE -->
+                <div class="total-score-container flex-col-centering">
+                    <div id="total-score2">
+                        0
+                    </div>
+                    <h1 style="font-size: 10px; margin-top: -5px; color:red ;">TOTAL SCORE</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
