@@ -13,5 +13,9 @@
 ### SEAK PEAK
 
 ![game-section](https://user-images.githubusercontent.com/64712526/128603473-3b265a90-f660-4b76-bddb-0b73648445e0.png)
+
+
 ![game-win](https://user-images.githubusercontent.com/64712526/128603478-ba52aa73-a606-4d2c-8fff-25c483b40bc5.png)
+
+
 ![game-howto](https://user-images.githubusercontent.com/64712526/128603479-25c4b758-9b2e-4055-9fea-dc0de18e1bec.png)
