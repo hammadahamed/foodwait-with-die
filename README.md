@@ -9,10 +9,16 @@
 - Once confirmed, the estiated duration will be shown for it to be prepared and a respective count-down will begin
 - While waiting, the customes can play the game in the game section
 
+### UPDATES
+
+v1.1 
+   - Added Sound effects
+   - Added Keypress support to controls
+
 
 ### SEAK PEAK
 
-![game-section](https://user-images.githubusercontent.com/64712526/128603473-3b265a90-f660-4b76-bddb-0b73648445e0.png)
+![game-section-sound](https://user-images.githubusercontent.com/64712526/128625860-c138cdec-990c-47a2-8174-2f1b59868b2d.png)
 
 
 ![game-win](https://user-images.githubusercontent.com/64712526/128603478-ba52aa73-a606-4d2c-8fff-25c483b40bc5.png)
