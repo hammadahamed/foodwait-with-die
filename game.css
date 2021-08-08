@@ -108,12 +108,6 @@ body {
     }
 }
 
-.app-container {
-    height: 100vh;
-    width: 100vw;
-    background-color: #2f3542;
-}
-
 .game-container {
     color: white;
     position: relative;

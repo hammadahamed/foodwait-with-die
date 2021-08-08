@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="./game.css">
+    <link rel="stylesheet" href="./app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <script src="/main.js" defer></script>
+    <script src="./app.js" defer></script>
+    <script src="./game.js" defer></script>
     <title>Foodie</title>
 </head>
 
@@ -19,8 +21,51 @@
     <!--                               APP SECTION                               -->
     <!-- ----------------------------------------------------------------------- -->
     <div class="app-container">
-        <button><a href="#game-section">Play game</a></button>
+
+        <!-- -------------------------- PLAY GAME BUTTON --------------------------- -->
+        <div id="play-game">
+            <div>
+                <div class="challenge">I challenge you to win this game before order arrives</div>
+                <div class="play"><a href="#game-section">Play Game</a></div>
+            </div>
+        </div>
+        <!-- ------------------------------- HEADER -------------------------------- -->
+        <div id="header">
+            <div>
+                <p>Foo<span style="color: white;">die</span><span
+                        style="color: rgba(255, 255, 255, .9); font-size: 13px;">.com</span></p>
+            </div>
+
+            <div id="bill">₹ 0</div>
+        </div>
+        <div class="app-wrapper">
+            <!-- ---------------------------- MENU SECTION ----------------------------- -->
+            <div id="menu-wrapper">
+                <p class="menu-title"><span style="color: #eb3a60;">#</span>
+                    Recepies</p>
+                <div id="menu-container">
+                </div>
+            </div>
+
+            <!-- ---------------------------- ORDER SECTION ---------------------------- -->
+
+            <div>
+                <div class="order-options">
+                    <div id="clear-orders">
+                        <img height="20px" src="./assets/trash.svg" alt="empty">
+                    </div>
+                    <div id="confirm-orders">
+                        Confirm Orders
+                    </div>
+                </div>
+                <div id="order-container">
+                    <div class="order-list-placeholder">Drag and drop to order</div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 
     <!-- ----------------------------------------------------------------------- -->
     <!--                              GAME SECTION                               -->
@@ -31,7 +76,7 @@
             <div style="background-color: transparent; margin: 0; display: block;">
                 <p id="how-to-play">How to Play ?</p>
                 <!-- -------------------------------- SOUND -------------------------------- -->
-                <img id="sound" src="/assets/volume-2.svg" alt="">
+                <img id="sound" src="./assets/volume-2.svg" alt="">
             </div>
             <div>Target Score : <span id="target-score" contenteditable="true" style="font-size: 30px;">50</span></div>
         </div>
@@ -62,7 +107,6 @@
                 <p>- Press <span style="color: red;">SPACE</span> to <span style="color: red;">HOLD / GRAB</span> the
                     rolled score </p>
             </div>
-
         </div>
 
         <!-- ------------------------------ CONFETTI ------------------------------- -->
@@ -71,11 +115,10 @@
                 <h1 id="winner" style="font-size: 100px; " class="text-g">Player</h1>
                 <h1 style="font-weight: 300;">WINS !</h1>
             </div>
-
         </div>
 
         <!-- --------------------------------- DIE --------------------------------- -->
-        <img id="die" class="slow-spinner" src="/assets/die6.png" alt="" height="150px" width="150px">
+        <img id="die" class="slow-spinner" src="./assets/die6.png" alt="" height="150px" width="150px">
         <button id="hold-btn" class="">
             GRAB SCORE
         </button>
@@ -102,7 +145,7 @@
                 <!-- ------------------------------- SPINNER -------------------------------- -->
                 <div id="spinner-wrap1" style="margin-top: -100px;margin-bottom: 50px; height: 35px;">
                     <button style="cursor: pointer;" id="spin-btn" class="spin-btn">
-                        <img src="/assets/rotate-cw.svg" height="35px" alt="roll">
+                        <img src="./assets/rotate-cw.svg" height="35px" alt="roll">
                     </button>
                 </div>
                 <!-- TOTAL ROLL SCORE -->
@@ -128,7 +171,6 @@
                 </div>
                 <!-- ------------------------------- SPINNER -------------------------------- -->
                 <div id="spinner-wrap2" style="margin-top: -100px;margin-bottom: 50px; height: 35px;">
-
                 </div>
                 <!-- CURRENT ROLL SCORE -->
                 <div class="total-score-container flex-col-centering">
@@ -139,10 +181,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-
 </body>
 
 </html>

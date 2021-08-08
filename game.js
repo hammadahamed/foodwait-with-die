@@ -1,16 +1,12 @@
 
-//  ----------------------------------------------------------------------------
-//                                GAME SECTION                                  
-//  ----------------------------------------------------------------------------
-
 (function () {
     let player1 = true;
     let tartget = 5;
     let sound = true;
     let soundBtn = document.querySelector("#sound");
-    let wonMusic = new Audio('/assets/won.wav');
-    let rollMusic = new Audio('/assets/dice-fx.mpeg');
-    let turnBreakMusic = new Audio('/assets/turn-break.mpeg');
+    let wonMusic = new Audio('./assets/won.wav');
+    let rollMusic = new Audio('./assets/dice-fx.mpeg');
+    let turnBreakMusic = new Audio('./assets/turn-break.mpeg');
     let die = document.getElementById("die");
 
     let spinBtn = document.getElementById("spin-btn");
@@ -64,7 +60,7 @@
         // disabling the button click
         spinBtn.disabled = true;
         setTimeout(() => {
-            die.src = `/assets/die${face}.png`;
+            die.src = `./assets/die${face}.png`;
             die.classList.remove("spinner");
             spinBtn.disabled = false;
 
@@ -159,7 +155,7 @@
         playerTotalScore1.innerText = "0";
         playerTotalScore2.innerText = "0";
         turnBreakNumber.innerText = "0";
-        die.src = `/assets/die6.png`;
+        die.src = `./assets/die6.png`;
         die.classList.add("slow-spinner");
 
     }
@@ -188,7 +184,7 @@
         let img = "x";
         if (sound) img = "2";
         else img = "x";
-        soundBtn.src = `/assets/volume-${img}.svg`;
+        soundBtn.src = `./assets/volume-${img}.svg`;
 
     });
 
