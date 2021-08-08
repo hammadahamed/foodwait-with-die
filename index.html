@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
     <script src="/main.js" defer></script>
-    <title>Document</title>
+    <title>Foodie</title>
 </head>
 
 <body>
@@ -28,13 +28,17 @@
     <div id="game-section" class="game-container">
         <!-- ----------------------------- HOW TO PLAY ----------------------------- -->
         <div class="how-to-play ">
-            <p id="how-to-play">How to Play ?</p>
+            <div style="background-color: transparent; margin: 0; display: block;">
+                <p id="how-to-play">How to Play ?</p>
+                <!-- -------------------------------- SOUND -------------------------------- -->
+                <img id="sound" src="/assets/volume-2.svg" alt="">
+            </div>
             <div>Target Score : <span id="target-score" contenteditable="true" style="font-size: 30px;">50</span></div>
         </div>
 
         <!-- ---------------------------- INSTRUCTIONS ----------------------------- -->
         <div id="instructions" class="flex-col-centering hidden">
-            <div>
+            <div class="info">
                 <p style="color: red; font-size: 25px;">How to play ?</p>
                 <p>- This is a simple die game</p>
                 <p>- It has two player</p>
@@ -51,6 +55,12 @@
                     your turn</p>
                 <p>- The who reaches 50 points first is the winner</p>
                 <p>- You can also change the <span style="color: red;">'TARGET SCORE'</span> by clicking on the same</p>
+                <p>- Key <span style="color: red;">'A'</span> for <span style="color: red;">'PALYER 1'</span> and <span
+                        style="color: red;">'L'</span> for <span style="color: red;">'PALYER 2'</span> can also be used
+                    to roll the die </p>
+
+                <p>- Press <span style="color: red;">SPACE</span> to <span style="color: red;">HOLD / GRAB</span> the
+                    rolled score </p>
             </div>
 
         </div>
@@ -72,7 +82,7 @@
 
         <!-- ----------------------------- TURN BREAK ------------------------------ -->
         <div id="turn-break" class="flex-col-centering">
-            <div id="" style="font-weight: 500;">
+            <div id="" style="font-weight: 500;color: #ffffff;">
                 TURN BREAK
             </div>
             <span id="turn-break-number">0</span>

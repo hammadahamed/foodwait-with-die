@@ -6,17 +6,16 @@
 (function () {
     let player1 = true;
     let tartget = 5;
-
-
-
-
-
+    let sound = true;
+    let soundBtn = document.querySelector("#sound");
+    let wonMusic = new Audio('/assets/won.wav');
+    let rollMusic = new Audio('/assets/dice-fx.mpeg');
+    let turnBreakMusic = new Audio('/assets/turn-break.mpeg');
     let die = document.getElementById("die");
 
     let spinBtn = document.getElementById("spin-btn");
     let spinBtnContainer1 = document.getElementById("spinner-wrap1");
     let spinBtnContainer2 = document.getElementById("spinner-wrap2");
-    console.log(spinBtnContainer1, spinBtnContainer2)
     let holdBtn = document.getElementById("hold-btn");
 
     let playerTarget = document.getElementById("target-score");
@@ -49,13 +48,16 @@
 
     // DIE ROLL FUNCTION
     function dieSpin(e) {
+        // PLAY SOUND
+        if (sound) {
+            rollMusic.currentTime = 0;
+            rollMusic.play();
+        }
         // settting the TARGET SCORE
         tartget = (document.getElementById("target-score").innerText).trim()
         playerTarget.innerText = tartget;
-        console.log(tartget)
 
         let face = Math.ceil(Math.random() * 6);
-        console.log(face);
         die.classList.remove("slow-spinner");
         // spinning
         die.classList.add("spinner");
@@ -79,8 +81,8 @@
             }
             prevRollNumber = face;
             turnBreakNumber.innerText = prevRollNumber.toString();
-
-        }, 200);
+            rollMusic.pause();
+        }, 300);
     }
 
     function resetPlayer1() { playerCurrScore1.innerHTML = "0"; };
@@ -98,6 +100,9 @@
         // CHECK IF TARGET REACHED
         // WINNING
         if (totalScore1 >= tartget || totalScore2 >= tartget) {
+            if (sound) {
+                wonMusic.play();
+            }
             if (totalScore1 >= tartget) {
                 winner.innerText = playerName1.innerHTML;
             }
@@ -108,6 +113,7 @@
             setTimeout(() => {
                 confetti.classList.add("hidden");
                 restartGame();
+                wonMusic.pause();
             }, 5000);
         }
         switchPlayer()
@@ -115,13 +121,16 @@
 
     // PLAYER SWITCHING FUNCTION
     function switchPlayer() {
+        // PLAY SOUND
+        if (sound) {
+            turnBreakMusic.currentTime = 0;
+            turnBreakMusic.play();
+        }
         if (player1) {
             left.style.background = inactive;
             right.style.background = active;
             resetPlayer1();
-            console.log("removing btn frm 1...", spinBtn)
             spinBtnContainer1.removeChild(spinBtn);
-            console.log("addin btn to 2...", spinBtn)
             spinBtnContainer2.appendChild(spinBtn);
 
         }
@@ -129,15 +138,12 @@
             left.style.background = active;
             right.style.background = inactive;
             resetPlayer2();
-            console.log("removing btn frm 2...", spinBtn)
             spinBtnContainer2.removeChild(spinBtn);
-            console.log("addin btn to 1...", spinBtn)
             spinBtnContainer1.appendChild(spinBtn);
 
         }
         player1 = !player1;
         curScore = 0;
-        console.log("change")
     }
 
     // NEW GAME
@@ -160,8 +166,33 @@
 
     // SPIN ON CLICK
     spinBtn.addEventListener("click", (e) => { dieSpin(e) });
-    holdBtn.addEventListener("click", (e) => { holdScore(e) })
+    // HOLD ON CLICK
+    holdBtn.addEventListener("click", (e) => { holdScore(e) });
 
+    // SPIN ON PRESS
+    document.body.addEventListener("keyup", (e) => {
+        if ((e.key == "a" || e.key == "A") && player1) {
+            dieSpin();
+        }
+        if ((e.key == "l" || e.key == "L") && !player1) {
+            dieSpin();
+        }
+        else if (e.key == " ") {
+            holdScore();
+        }
+    });
+
+    // TOGGLE SOUND
+    soundBtn.addEventListener("click", (e) => {
+        sound = !sound;
+        let img = "x";
+        if (sound) img = "2";
+        else img = "x";
+        soundBtn.src = `/assets/volume-${img}.svg`;
+
+    });
+
+    // HOW TO PLAY
     howToPlay.addEventListener("click", (e) => {
         instructions.classList.remove("hidden")
     });

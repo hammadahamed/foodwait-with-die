@@ -213,14 +213,14 @@ body {
     align-items: end;
 }
 
-.how-to-play>p {
+.how-to-play>div>p {
     padding: 2px 15px;
     background-color: rgba(255, 255, 255, .13);
     cursor: pointer;
     border-radius: 4px;
 }
 
-.how-to-play>p:hover {
+.how-to-play>div>p:hover {
     background-color: rgba(255, 255, 255, .5);
 }
 
@@ -233,7 +233,6 @@ body {
     margin-right: 20px;
     padding: 2px 15px;
     background-color: rgba(255, 255, 255, .13);
-    cursor: pointer;
     border-radius: 4px;
 }
 
@@ -258,7 +257,22 @@ body {
     padding-bottom: 40px;
 }
 
+.info {
+    font-size: 14px;
+}
 
+#sound {
+    background: rgba(255, 255, 255, .2);
+    padding: 10px;
+    margin-left: 2px;
+    height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#sound:hover {
+    background: rgba(255, 255, 255, .13);
+}
 
 /* ------------------------------------------------------------------------------------- */
 /* ---------------------------- FOR PLACEHOLDERS ---------------------------- */
