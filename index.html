@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
     <script src="./app.js" defer></script>
     <script src="./game.js" defer></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <title>Foodie</title>
 </head>
 
@@ -21,6 +22,12 @@
     <!--                               APP SECTION                               -->
     <!-- ----------------------------------------------------------------------- -->
     <div class="app-container">
+        <!-- CONFIRMED POPUP -->
+        <div id="confirmed" class="hidden">
+            <lottie-player src="./assets/lottie/confirmed_lottie.json" background="transparent" speed="2"
+                style="width: 300px; height: 300px;" autoplay loop>
+            </lottie-player>
+        </div>
 
         <!-- -------------------------- PLAY GAME BUTTON --------------------------- -->
         <div id="play-game">
@@ -59,7 +66,10 @@
                     </div>
                 </div>
                 <div id="order-container">
-                    <div class="order-list-placeholder">Drag and drop to order</div>
+                    <div class="order-list-placeholder">
+                        <p>Drag and drop to order</p>
+
+                    </div>
                 </div>
             </div>
         </div>

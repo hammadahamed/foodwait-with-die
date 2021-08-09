@@ -55,6 +55,8 @@
     let orderContainer = document.querySelector("#order-container");
     let clearOrders = document.querySelector("#clear-orders");
     let billUI = document.querySelector("#bill");
+    let confirmBtn = document.querySelector("#confirm-orders");
+    let confirmed = document.querySelector("#confirmed");
 
 
     for (let i of recepies) {
@@ -66,6 +68,7 @@
         // POPULATING THE MENU
         let item = `<div id="${name}" class="recepie-card" draggable="true">
                        <div id="card-img"> 
+                            <img class="r-img" src="./assets/recepies/pepper-grill.jpg" alt="" draggable="true"  >
                        </div>
                        <div id="card-info"> 
                             <p class="item-name">${name.split("-").join(" ")}</p>
@@ -74,11 +77,12 @@
                                 <p class="item-price right-item" s>₹ ${price}</p>
                              </div>
                              <div class="item-section">
-                                <p class="prepTime-title">ETA</p>
+                                <p class="prepTime-title">Prep ETA</p>
                                 <p class="item-prepTime right-item"> ${prepTime} mins</p>
                              </div>
                        </div>
                     </div>`;
+
         // ISERTING RECEPIE CARDS INTO THE UI
         item = parser.parseFromString(item, 'text/html').body.firstChild;
         menuContainer.appendChild(item);
@@ -171,11 +175,27 @@
             // PUSHING BILL TO UI
             billUI.innerHTML = "₹" + bill;
         }
+
+
+        // DROP RECOGNITION
         orderContainer.addEventListener("drop", addOrder);
+        // EMPTY THE ORDERS
         clearOrders.addEventListener("click", () => {
-            removeOrdersFromUI();
-            orderList = {};
-            billUI.innerHTML = "₹ 0";
+            confirmed.classList.remove("hidden");
+            setTimeout(() => {
+                removeOrdersFromUI();
+                orderList = {};
+                billUI.innerHTML = "₹ 0";
+                confirmed.classList.add("hidden");
+            }, 1500);
+        });
+
+        // CONFIRM THE ORDERS
+        confirmBtn.addEventListener("click", (e) => {
+            confirmed.classList.remove("hidden");
+            setTimeout(() => {
+                confirmed.classList.add("hidden");
+            }, 1500);
         })
     }
 })();
