@@ -112,11 +112,13 @@
                 wonMusic.pause();
             }, 5000);
         }
-        switchPlayer()
+        switchPlayer();
+        holdBtn.blur();
     }
 
     // PLAYER SWITCHING FUNCTION
     function switchPlayer() {
+        console.log("switching player")
         // PLAY SOUND
         if (sound) {
             turnBreakMusic.currentTime = 0;
@@ -174,7 +176,9 @@
             dieSpin();
         }
         else if (e.key == " ") {
-            holdScore();
+            e.stopImmediatePropagation();
+            holdScore(e);
+
         }
     });
 
