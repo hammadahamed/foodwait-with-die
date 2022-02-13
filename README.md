@@ -1,5 +1,5 @@
 # Foodwait-with-die
-   This app is build with an intention to be showcased as a validation to the knowledge and expertise is vannila Javasript, HTML and CSS
+   This app is built with an intention to get this showcased as a validation to the knowledge and expertise is vannila Javasript, HTML and CSS
     
     
 ### DESCRIPTION
